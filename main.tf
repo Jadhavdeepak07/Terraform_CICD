@@ -1,11 +1,20 @@
+
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1"
 }
 
 resource "aws_instance" "dev" {
-    ami = "ami-0f88e80871fd81e91"
-    instance_type = "t2.micro"
-    tags = {
-      Name = "nitnit"
-    }
+  ami           = "ami-0d87d059b6138553e"
+  instance_type = "t2.micro"
+  subnet_id     = "subnet-07a1b04028081083e"
+
+  root_block_device {
+    volume_size           = 20
+    volume_type           = "gp3"
+    delete_on_termination = true
+  }
+
+  tags = {
+    Name = "nitnit"
+  }
 }
