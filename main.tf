@@ -15,6 +15,6 @@ resource "aws_instance" "dev" {
   }
 
   tags = {
-    Name = "Rajveer"
+    Name = "Rajveer-1"
   }
 }
